@@ -13,4 +13,4 @@ The purpose is to bring the concept of machine learning to undergraduates, and c
 ### Evaluation Classification Results
 ### Support Vector Machine
 ### Decision Tree
-### Integrated Learning and Random Forest
+### Ensemble Learning and Random Forest
