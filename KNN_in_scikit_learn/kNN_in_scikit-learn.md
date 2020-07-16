@@ -2,11 +2,13 @@
 
 ## kNN Basics
 <div align=center><img width="800" height="400" src="https://github.com/ChuleHou/Research_ML_UG/blob/master/iMages/time-tumorsize.png"/></div>
+
 In the above picture, we can see the two-dimensional data relationship between tumor size and time. The red dots are positive tumors and the blue dots are negative tumors. The green dots are new case. Determine the type of the case by judging the distance between the green dot and the blue or red dot.
 
 ### Euclidean Distance
 <div align=center><img width="400" height="150" src="https://github.com/ChuleHou/Research_ML_UG/blob/master/iMages/Euclidean_Distance1.png"/></div>
 <div align=center><img width="300" height="100" src="https://github.com/ChuleHou/Research_ML_UG/blob/master/iMages/Euclidean_Distance2.png"/></div>
+
 In mathematics, the Euclidean distance or Euclidean metric is the "ordinary" straight-line distance between two points in Euclidean space.
 
 #### raw data
@@ -59,4 +61,43 @@ k = 6
 The K nearest neighbor algorithm is very special and can be considered as an algorithm without a model
 In order to be unified with other algorithms, the training data set as the model itself.
 
+#### Use encapsulated KNN algorithm
+```sh
+%run Research_ML_UG/KNN_in_scikit_learn/KNN_function/KNN.py
+```
+#### Use KNN in scikit-learn
+```sh
+from sklearn.neighbors import KNeighborsClassifier
+```
+* [Challenge Solution](https://github.com/ChuleHou/Research_ML_UG/blob/master/KNN_in_scikit_learn/kNN_in_scikit-learn.ipynb)
+
 ## Test algorithm
+
+### data split
+
+<div align=center><img width="400" height="200" src="https://github.com/ChuleHou/Research_ML_UG/blob/master/iMages/Train-Test-Data-Split.png"/></div>
+
+#### Use the iris dataset in sklearn
+```sh
+from sklearn import datasets
+iris = datasets.load_iris()
+iris.keys()
+```
+
+#### Shuffle the indexex
+```sh
+shuffled_indexes = np.random.permutation(len(X))
+```
+
+#### use the ratio to split the train and test data
+```sh
+test_ratio = 0.2
+test_size = int(len(X) * test_ratio)
+test_indexes = shuffled_indexes[:test_size]
+train_indexes = shuffled_indexes[test_size:]
+```
+
+#### Use encapsulated KNN algorithm
+* [Challenge Solution](https://github.com/ChuleHou/Research_ML_UG/blob/master/KNN_in_scikit_learn/Test_the_algorithm.ipynb)
+
+
